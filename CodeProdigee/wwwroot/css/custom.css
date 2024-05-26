@@ -1,0 +1,4 @@
+.custom_wavy_underline:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}

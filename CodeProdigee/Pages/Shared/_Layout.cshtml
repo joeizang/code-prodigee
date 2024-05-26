@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - CodeProdigee</title>
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bootstrap-icons.min.css" asp-append-version="true">
+    <script src="js/htmx.min.js" defer></script>
+    <script>
+        function showmsg() { alert("mover has hovered!")}
+    </script>
+</head>
+<body class="bg-slate-800 text-white">
+<header>
+    <nav>
+        <div class="text-xl py-4 px-4 bg-gray-700 flex flex-row justify-between items-center">
+            <div class="">
+                <a asp-page="/Index">
+                    <img src="~/images/newlogoresized.png" alt="Code Prodigee Logo" width="70" height="70">
+                </a>
+            </div>
+            <div class="items-center gap-5 flex justify-center text-sm-xl">
+                <a asp-page="toot" class="hover:decoration-wavy hover:underline hover:text-old-brick-400 hover:underline-offset-4 font-bold">Resume</a>
+                <a asp-page="toot" class="hover:decoration-wavy hover:underline hover:text-old-brick-400 hover:underline-offset-4 font-bold">About</a>
+                <a asp-page="toot" class="hover:decoration-wavy hover:underline hover:text-old-brick-400 hover:underline-offset-4 font-bold">Contact</a>
+            </div>
+            <div class="item-center flex justify-end">
+                <a class="border-50 bg-maroon-400 bi bi-search hover:text-old-brick-400 font-bold"></a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container text-white">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="fixed bottom-0 w-100 py-4 px-4 w-full h-16 bg-gray-600">
+    <div class="flex flex-row justify-between items-center">
+        <div class="items-center justify-start">
+            &copy; @DateTime.Today.Year - CodeProdigee
+        </div>
+        <div class="flex flex-row items-center gap-x-6 justify-between">
+            <a href="https://x.com/joseph_izang1" class="text-2xl hover:text-old-brick-400">
+                <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://github.com/joeizang" class="text-2xl hover:text-old-brick-400">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+        <div class="justify-end items-center text-2xl hover:text-old-brick-400">
+            <span class="bi bi-arrow-up-circle-fill"></span>
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
